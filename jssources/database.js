@@ -15,7 +15,7 @@ function DatabaseMaster() {
 		
 T_BODY
 
-	// Thread Safe Transactions - freak'n kony doesn't handle this...
+	// Thread Safe Transactions
 	var transactions = []; 
 	var transactionCounter = 0;
 	
@@ -75,6 +75,6 @@ T_BODY
 	}
 
 	// KEEP START
-
+	
 	// KEEP END
 }

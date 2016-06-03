@@ -4,6 +4,14 @@
 
 Model your database in java and generate a Kony database interface for your app. Avoid coding WebSQL this way entirely.
 
+**It covers** 
+Operations: Insert, Update, DeleteWhere, GetWhere, GetByPrimaryKey, Clear, GetCountWhere
+Keep Section: Write your own code into the interface without it being deleted when you recreate it. 
+
+**coming up:** Relationsships, Joins
+
+Everyone is invited to contribute :)
+
 ## Usage 
 
 ### Step 1. Get the Dao Generator
