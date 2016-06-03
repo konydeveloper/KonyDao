@@ -1,6 +1,8 @@
 # Data Access Object Generator for Kony WebSQL Javascript API
 
-Model your database in java and generate a Kony database interface for your app.
+## What?
+
+Model your database in java and generate a Kony database interface for your app. Avoid coding WebSQL this way entirely.
 
 ## Usage 
 
@@ -8,13 +10,21 @@ Model your database in java and generate a Kony database interface for your app.
 
 Create a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) or directly clone/download the [KonyDao Repository](https://github.com/konydeveloper/KonyDao) in your Kony project directory. Call it KonyDao for example. This is the Kony dao generator library which contains all the code required to generate your javascript file.
 
-### Step 2. Import the library as a java project into your workspace.
+### Step 2. Import the library
 
-### Step 3. Create a java (eclipse) project inside your kony project. Call it MyProjectDaoGenerator for example. Here you will model your database and trigger javacript file generation.
+As a java project into your workspace or simply copy your code into your project of step 3.
 
-### Step 4. In your modeling project, add the KonyDao library to your build path. In eclipse, go to your project properties -> Java Build Path -> Projects -> Add -> then select "KonyDao" in our example.
+### Step 3. Create your modeling project
 
-### Step 5. Create a class following this example:
+Create a java (eclipse) project inside your kony project. Call it MyProjectDaoGenerator for example. Here you will model your database and trigger javacript file generation.
+
+### Step 4. Setup your modeling project
+
+In your modeling project, add the KonyDao library to your build path. In eclipse, go to your project properties -> Java Build Path -> Projects -> Add -> then select "KonyDao" in our example.
+
+### Step 5. Model your database
+
+Create a class following this example:
 
 ```
 import static de.arvato.konydao.model.Property.INTEGER;
@@ -55,15 +65,18 @@ public class KonyDaoSampleDaoGenerator {
 		address.addProperty(TEXT, "zipcode");
 		address.addProperty(TEXT, "country");
 
-		// Generate the javascript file from modeled entities
+		// Generate the javascript file from modeled entities (this is the correct path of kony visualizer 7)
 		db.generate(new File("../modules/database.js"));
 	}
 }
 ```
 
-### Step 6. **execute your generator**. You should have a generated javascript file called "database.js" (as in example) inside your modules folder of your kony project now.
+### Step 6. Generate your interface
+Execute your generator. You should have a generated javascript file called "database.js" (as in example) inside your modules folder of your kony project now.
 
-### Step 7. Implement your code in your kony project following these examples:
+### Step 7. Attach your interface in your app code.
+
+Implement your code in your kony project following these examples:
 
 **Open your database and initialize it (create tables) if necessary**
 ```
@@ -100,4 +113,4 @@ var customerNew = {
 };
 ```
 
-Check out the [example project](https://github.com/konydeveloper/KonyDaoSample).
+Check out the [sample project](https://github.com/konydeveloper/KonyDaoSample) for more code how to implement the different functions. But honestly, just check out your generated interface. It's pretty intuative.
